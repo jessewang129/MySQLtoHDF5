@@ -2,7 +2,7 @@ import MySQLdb
 import numpy as np
 import h5py
 
-file = h5py.File("C:\\Users\Jesse\Desktop\UBC_feeder.hdf5", "w")
+file = h5py.File("UBC_feeder.hdf5", "w")
 comp_type = np.dtype([('Local Time', np.str_,19), ('Power Demand(kW)', float), ('Power Delivered(kW)', int), ('PF lag mean', float)])
 
 db = MySQLdb.connect(host="Jesse-PC", # your host, usually localhost
