@@ -2,19 +2,19 @@ import MySQLdb
 import numpy as np
 import h5py
 
-file = h5py.File("C:\\Users\Jesse\Desktop\UBC_feeder.hdf5", "w")
+file = h5py.File("UBC_feeder.hdf5", "w")
 comp_type = np.dtype([('Local Time', np.str_,19), ('Power Demand(kW)', float), ('Power Delivered(kW)', int), ('PF lag mean', float)])
 
-db = MySQLdb.connect(host="Jesse-PC", # your host, usually localhost
-                     user="Jesse", # your username
-                      passwd="1234", # your password
-                      db="UBC") # name of the data base
+db = MySQLdb.connect(host="", # your host, usually localhost
+                     user="", # your username
+                      passwd="", # your password
+                      db="") # name of the data base
 
 # you must create a Cursor object. It will let
 #  you execute all the queries you need
 cur = db.cursor() 
-
-cur.execute("SELECT * FROM feeder_12f24")
+# enter your query here
+cur.execute("")
 
 x = np.array([("0000000000000000000",1.1 ,1 , 1.1)], dtype = comp_type)
 
