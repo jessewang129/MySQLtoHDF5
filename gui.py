@@ -71,7 +71,7 @@ day.grid(row = 2, column = 6)
 def convert():
     
 	file = h5py.File("Armada.hdf5", "w")
-	comp_type = np.dtype([('Equipment Id', int), ('Time', np.str_,19), ('Average value', float), ('Max value', float), ('Mmin value', float)])
+	comp_type = np.dtype([('Equipment Id', int), ('Time', np.str_,19), ('Average value', float), ('Max value', float), ('Min value', float)])
 	
 	db = MySQLdb.connect(host="Jesse-PC", # your host, usually localhost
                      user="Jesse", # your username
