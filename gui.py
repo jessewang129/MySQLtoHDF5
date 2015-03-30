@@ -2,6 +2,7 @@ import MySQLdb
 import numpy as np
 import h5py
 from Tkinter import *
+import tkMessageBox
 
 master = Tk()
 
@@ -123,8 +124,9 @@ def convert():
 	
 	dset = file.create_dataset(str(var_l.get()), data = x, dtype = comp_type)
 	file.close()
-	print "Complete"
-	print breakpoint
+	print "Conversion Complete"
+	tkMessageBox.showinfo("Message", "Conversion Complete")
+	
 	# master.quit()
  
 def analysis():	
@@ -143,8 +145,13 @@ def analysis():
 			if max_equ[i] > max[index]:
 				max[index] = max_equ[i]
 		index+=1
+	print "\nHighest average of each equipment:"
+	title = "\nHighest average of each equipment:"
+	result = ""
 	for k in range(0, len(max)-1):
-		print "equipment"+str(equ_list[k])+":"+str(max[k])
+		result+="\n equipment"+str(equ_list[k])+":"+str(max[k])
+	print result
+	tkMessageBox.showinfo(title, result)
 		
 				
 button = Button(master, text="Convert", command=convert)
