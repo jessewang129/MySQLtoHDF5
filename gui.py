@@ -158,7 +158,8 @@ button = Button(master, text="Convert", command=convert)
 button.grid(row = 5, column = 1)
 
 button2 = Button(master, text="Analyze", command=analysis)
-button2.grid(row = 5, column = 3)
+button2.grid(row = 5, column = 2)
+
 mainloop()
 
 
